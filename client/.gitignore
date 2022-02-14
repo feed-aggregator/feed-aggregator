@@ -1,3 +1,11 @@
+**/node_modules
+**/.vscode
+**/*.env
+**/dist
+
+# ---------------
+# Template ignore
+# ---------------
 
 .cache/
 coverage/
