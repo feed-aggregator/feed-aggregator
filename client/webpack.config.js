@@ -85,7 +85,6 @@ const config = {
         '</title></head><body><div id="app"></div></body></html>',
       filename: 'index.html',
     }),
-    ,
     new MiniCssExtractPlugin(),
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',
