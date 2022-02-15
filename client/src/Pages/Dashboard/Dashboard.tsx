@@ -1,19 +1,19 @@
-import React, {useState, useEffect} from 'react'
-import './Dashboard.scss'
-import NavBar from '../../Components/NavBar/NavBar'
+import React, { useState, useEffect } from 'react';
+import './Dashboard.scss';
+import NavBar from '../../Components/NavBar/NavBar';
+import Post from '../../Components/Post/Post';
 
 export default function Dashboard() {
-	const [posts, setPosts] = useState([])
+  const [posts, setPosts] = useState([]);
 
-	useEffect(() => {
+  useEffect(() => {}, [posts]);
 
-	}, [posts])
-
-
-	return (
-		<>
-			<NavBar />
-
-		</>
-	)
+  return (
+    <div className='Dashboard-container'>
+      <NavBar />
+      <div className='Posts-container'>
+        <Post />
+      </div>
+    </div>
+  );
 }

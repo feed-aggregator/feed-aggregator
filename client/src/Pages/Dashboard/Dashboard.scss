@@ -1,7 +1,12 @@
 @use '../../Theme/variables' as v;
 
-.bg {
-  @include v.theme() {
-    background-color: v.theme-get('bg-color');
-  }
+// .bg {
+//   @include v.theme() {
+//     background-color: v.theme-get('bg-color');
+//   }
+// }
+
+.Dashboard-container {
+  position: relative;
+  top: 5%;
 }

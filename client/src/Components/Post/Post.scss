@@ -1,0 +1,10 @@
+@use '../../Theme/variables' as v;
+
+.Post-container {
+  width: 100vw;
+  height: 10vh;
+
+  @include v.theme() {
+    color: v.theme-get('tertiary');
+  }
+}
