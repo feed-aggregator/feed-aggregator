@@ -1,11 +1,19 @@
 const db = require('../models/userModel');
+const bcrypt = require('bcrypt');
 
 const userController = {};
 
 userController.signup = (req, res, next) => {
   const { email, password } = req.body;
 
-  const input = `INSERT INTO users (user_email, user_password) VALUES (${email}, ${password})`;
+  bcrypt.hash(password, 10, (err, hash) => {
+    if (err) return next(err);
+    else {
+      Object.assign(req.body, { password: hash });
+    }
+  });
+
+  const input = `INSERT INTO users (user_email, user_password) VALUES (${email}, ${req.body.password})`;
 
   db.query(input, (err, result) => {
     if (err) {
@@ -25,10 +33,9 @@ userController.signup = (req, res, next) => {
 
 userController.login = (req, res, next) => {
   const { email, password } = req.body;
-
   const input = `SELECT * FROM users WHERE user_email=${email} AND user_password=${password}`;
 
-  db.query(input, (err, result) => {
+  db.query(input, (err, user) => {
     if (err) {
       return next({
         log: `There was an issue logging in user in userController.login. ${err}`,
@@ -38,8 +45,13 @@ userController.login = (req, res, next) => {
         },
       });
     } else {
-      res.locals.result = 'User successfully logged in.';
-      return next();
+      bcrypt.compare(password, user.user_password, (err, result) => {
+        if (err) return next(err);
+        else if (result === true) {
+          res.locals.result = 'User successfully logged in.';
+          return next();
+        }
+      });
     }
   });
 };
