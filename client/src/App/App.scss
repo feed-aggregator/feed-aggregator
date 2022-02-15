@@ -1,1 +1,5 @@
-@use '../variables' as v;
+@use '../Theme/variables' as v;
+
+.App-container {
+  height: 100vh;
+}
