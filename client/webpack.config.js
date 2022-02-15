@@ -1,10 +1,8 @@
 const webpack = require('webpack');
 const path = require('path');
-const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const config = {
   entry: './src/index.tsx',
@@ -20,18 +18,9 @@ const config = {
         exclude: /node_modules/,
       },
       {
-        test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1,
-            },
-          },
-          'postcss-loader',
-        ],
-        exclude: /\.module\.css$/,
+        test: /\.ts(x)?$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/,
       },
       {
         test: /\.css$/,
@@ -41,12 +30,10 @@ const config = {
             loader: 'css-loader',
             options: {
               importLoaders: 1,
-              modules: true,
             },
           },
           'postcss-loader',
         ],
-        include: /\.module\.css$/,
       },
       {
         test: /\.scss$/,
@@ -67,17 +54,12 @@ const config = {
           },
         ],
       },
-      {
-        test: /\.ts(x)?$/,
-        loader: 'ts-loader',
-        exclude: /node_modules/,
-      },
     ],
   },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js', '.jsx'],
+  },
   plugins: [
-    new CopyPlugin({
-      patterns: [{ from: 'src/index.html' }],
-    }),
     new HtmlWebpackPlugin({
       templateContent: ({ htmlWebpackPlugin }) =>
         '<!DOCTYPE html><html><head><meta charset="utf-8"><title>' +
@@ -85,12 +67,11 @@ const config = {
         '</title></head><body><div id="app"></div></body></html>',
       filename: 'index.html',
     }),
-    new MiniCssExtractPlugin(),
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',
       openAnalyzer: false,
     }),
-    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin(),
   ],
   optimization: {
     runtimeChunk: 'single',
@@ -103,9 +84,6 @@ const config = {
         },
       },
     },
-  },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
   },
 };
 
