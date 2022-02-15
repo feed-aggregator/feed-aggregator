@@ -13,6 +13,8 @@ export default function Dashboard() {
       <NavBar />
       <div className='Posts-container'>
         <Post />
+        <Post />
+        <Post />
       </div>
     </div>
   );

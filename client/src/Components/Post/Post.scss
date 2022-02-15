@@ -1,10 +1,19 @@
 @use '../../Theme/variables' as v;
 
 .Post-container {
-  width: 100vw;
+  width: 96vw;
   height: 10vh;
 
   @include v.theme() {
+    background-color: v.theme-get('primary');
     color: v.theme-get('tertiary');
+    box-shadow: v.theme-get('shadow') 0px 1vw 4vw 0px;
+    // box-shadow: v.theme-get('shadow') 0px 7px 29px 0px;
+  }
+
+  // if we are not on mobile⬇
+  @media screen and (min-width: v.$mobile-width) {
+    position: relative;
+    margin: auto auto auto auto;
   }
 }

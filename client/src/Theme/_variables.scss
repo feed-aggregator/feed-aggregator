@@ -1,3 +1,5 @@
+$mobile-width: 768px;
+
 $black: #000000; // black
 $white: #ffffff; // white
 
@@ -7,17 +9,20 @@ $blackish: #111;
 $lightPrimary: #d0e1f1;
 $lightSecondary: #b0bdca;
 $lightTertiary: #909aa3;
+$lightShadow: rgba(255, 255, 255, 0.301);
 
 // dark theme
-$darkPrimary: #2f2f2f;
+$darkPrimary: #33363b;
 $darkSecondary: #585c5f;
-$darkTertiary: #c9cccf;
+$darkTertiary: #f5f6f7;
+$darkShadow: rgba(100, 100, 111, 0.2);
 
 $themes: (
   dark: (
     'primary': $darkPrimary,
     'secondary': $darkSecondary,
     'tertiary': $darkTertiary,
+    'shadow': $darkShadow,
     'text-color': $darkTertiary,
     'bg-color': $darkPrimary,
   ),
@@ -25,6 +30,7 @@ $themes: (
     'primary': $lightPrimary,
     'secondary': $lightSecondary,
     'tertiary': $lightTertiary,
+    'shadow': $lightShadow,
     'text-color': $lightTertiary,
     'bg-color': $lightPrimary,
   ),
