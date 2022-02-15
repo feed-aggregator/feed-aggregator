@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "client": "cd client && npm start-dev",
-    "server": "cross-env NODE_ENV=development nodemon server/server.js",
+    "client": "cd client && npm run start-dev",
+    "server": "cd server && npm run start-dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
