@@ -6,7 +6,13 @@
     "es2021": true
   },
 	"globals": { "fetch": false , "document": false, "window": false, "localStorage": false},
-  "extends": ["eslint:recommended"],
+  "extends": ["eslint:recommended",
+							"plugin:react/recommended",
+							"standard",
+							"plugin:react/jsx-runtime",
+							"plugin:testing-library/react",
+							"plugin:jest/all"
+						],
 	"parser":"@babel/eslint-parser",
   "parserOptions": { "sourceType": "module" ,"requireConfigFile": false},
 	"plugins": [

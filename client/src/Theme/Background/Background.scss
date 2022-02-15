@@ -1,0 +1,7 @@
+@use '../variables' as v;
+
+.bg {
+  @include v.theme() {
+    background-color: v.theme-get('bg-color');
+  }
+}
