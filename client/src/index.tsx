@@ -1,8 +1,25 @@
 import * as React from 'react';
 import * as ReactDOM from "react-dom";
 
-import App from './pages/App/App';
-import "./styles.css";
+import App from './pages/HelloWorld/HelloWorld';
 import "./styles.scss";
+import { store } from './redux/store';
+import { Provider } from 'react-redux';
 
-ReactDOM.render(<App name="John Alicastro😳" />, document.getElementById("app"));
+import { ThemeProvider } from './Theme/ThemeContext';
+// import Background from './Theme/Background/Background';
+
+import {Background} from './Theme/Background/Background'
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <ThemeProvider initialTheme='dark' >
+        <Background>
+          <App name='hello!' />
+        </Background>
+      </ThemeProvider>
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById('app')
+);

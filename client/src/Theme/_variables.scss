@@ -1,0 +1,39 @@
+$black: #000000; // black
+$white: #ffffff; // white
+
+$blackish: #111;
+
+$themes: (
+  dark: (
+    'text-color': $white,
+    'bg-color': #424242,
+  ),
+  light: (
+    'text-color': $black,
+    'bg-color': $white,
+  ),
+);
+
+$theme-map: null;
+@mixin theme() {
+  @each $theme, $map in $themes {
+    // $theme: darkTheme, lightTheme
+    // $map: ('text-color': ..., 'bg-color': ...)
+
+    // make the $map globally accessible, so that theme-get() can access it
+    $theme-map: $map !global;
+
+    // make a class for each theme using interpolation -> #{}
+    // use & for making the theme class ancestor of the class
+    // from which you use @include theme() {...}
+    .#{$theme} & {
+      @content; // the content inside @include theme() {...}
+    }
+  }
+  // no use of the variable $theme-map now
+  $theme-map: null !global;
+}
+
+@function theme-get($key) {
+  @return map-get($theme-map, $key);
+}
