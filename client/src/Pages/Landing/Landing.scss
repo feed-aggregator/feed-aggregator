@@ -1,0 +1,57 @@
+@use '../../Theme/variables' as v;
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
+
+.Landing-container {
+  // text-align: center;
+  display: flex;
+  // flex-wrap: wrap;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  // font-size: calc(10px + 2vmin);
+
+  @include v.theme() {
+    background-color: v.theme-get('bg-color');
+    color: v.theme-get('text-color');
+  }
+}
+
+.Landing-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  height: 10rem;
+  padding-bottom: 0rem;
+  display: flex;
+  // flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.Landing-buttons {
+  height: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  // font-size: calc(10px + 2vmin);
+}
+
+// .App-header {
+//   min-height: 100vh;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   font-size: calc(10px + 2vmin);
+
+//   @include v.theme() {
+//     background-color: v.theme-get('bg-color');
+//   }
+// }
