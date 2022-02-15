@@ -7,12 +7,14 @@ import { store } from './redux/store';
 import { Provider } from 'react-redux';
 
 import { ThemeProvider } from './Theme/ThemeContext';
-import Background from './Theme/Background/Background';
+// import Background from './Theme/Background/Background';
+
+import {Background} from './Theme/Background/Background'
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <ThemeProvider>
+      <ThemeProvider initialTheme='light' >
         <Background>
           <App name='hello!' />
         </Background>

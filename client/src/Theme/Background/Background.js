@@ -4,4 +4,4 @@ const Background = ({ children }) => {
   return <div className={'bg'}>{children}</div>;
 };
 
-export default Background;
+export { Background };

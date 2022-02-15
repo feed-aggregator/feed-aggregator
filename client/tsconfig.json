@@ -19,10 +19,16 @@
     "isolatedModules": true,
     "noEmit": false,
     "jsx": "react",
-		"sourceMap": true
+		"sourceMap": true,
+		"outDir": "./dist"
   },
   "include": [
     "src"
-  ]
+  ],
+	"exclude": [
+		"./dist/**/*",
+		"./node_modules/**/*"
+    // "dist", "node_modules"
+	]
 }
 
