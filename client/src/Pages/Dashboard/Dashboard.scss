@@ -1,4 +1,4 @@
-@use '../variables' as v;
+@use '../../Theme/variables' as v;
 
 .bg {
   @include v.theme() {

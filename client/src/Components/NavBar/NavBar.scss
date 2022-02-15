@@ -1,0 +1,58 @@
+@use '../../Theme/variables' as v;
+
+.NavBar-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50px;
+
+  ul {
+    list-style-type: none;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    li {
+      margin-right: 20px;
+      font-size: 20px;
+      text-transform: uppercase;
+      cursor: pointer;
+      @include v.theme() {
+        color: v.theme-get('tertiary');
+      }
+    }
+
+    @include v.theme() {
+      background: v.theme-get('primary');
+      border-color: v.theme-get('secondary');
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    ul {
+      flex-direction: column;
+      height: auto;
+    }
+    li:nth-child(0) {
+      margin-top: 50px;
+      @include v.theme() {
+        border-top: 1px solid v.theme-get('tertiary');
+      }
+    }
+    li {
+      width: 100%;
+      text-align: center;
+      margin-right: 0px;
+      padding: 20px 0;
+      @include v.theme() {
+        border-top: 1px solid v.theme-get('tertiary');
+      }
+    }
+  }
+
+  @include v.theme() {
+    color: v.theme-get('primary');
+  }
+}

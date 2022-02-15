@@ -11,14 +11,20 @@ $lightTertiary: #909aa3;
 // dark theme
 $darkPrimary: #2f2f2f;
 $darkSecondary: #585c5f;
-$darkTertiary: #a9adb2;
+$darkTertiary: #c9cccf;
 
 $themes: (
   dark: (
+    'primary': $darkPrimary,
+    'secondary': $darkSecondary,
+    'tertiary': $darkTertiary,
     'text-color': $darkTertiary,
     'bg-color': $darkPrimary,
   ),
   light: (
+    'primary': $lightPrimary,
+    'secondary': $lightSecondary,
+    'tertiary': $lightTertiary,
     'text-color': $lightTertiary,
     'bg-color': $lightPrimary,
   ),
