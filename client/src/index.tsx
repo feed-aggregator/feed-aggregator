@@ -14,7 +14,7 @@ import {Background} from './Theme/Background/Background'
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <ThemeProvider initialTheme='light' >
+      <ThemeProvider initialTheme='dark' >
         <Background>
           <App name='hello!' />
         </Background>
