@@ -1,22 +1,16 @@
+import React, { useContext } from 'react';
+import {BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import * as React from 'react';
+import Landing from '../Landing/Landing';
 
-interface Props {
-   name:
-    string
+export default function App() {
+	return (
+		<div className='bg'>
+			<BrowserRouter>
+				<Switch>
+					<Route path='/' element={<Landing />} />
+				</Switch>
+			</BrowserRouter>
+		</div>
+	)
 }
-
-class App extends React.Component<Props> {
-  render() {
-    const { name } = this.props;
-    return (
-      <>
-        <h1>
-          Hello {name}
-        </h1>
-      </>
-    );
-  }
-}
-
-export default App;
