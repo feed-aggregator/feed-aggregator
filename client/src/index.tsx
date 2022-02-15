@@ -1,13 +1,12 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-
-import App from './pages/App/App';
-import './styles.scss';
+// import App from './pages/HelloWorld/HelloWorld';
+import App from './App/App'
 import { store } from './redux/store';
 import { Provider } from 'react-redux';
 
-import { ThemeProvider } from './Theme/ThemeContext';
+import { ThemeProvider, getInitialTheme } from './Theme/ThemeContext';
 
 
 import { Background } from './Theme/Background/Background';
@@ -15,10 +14,9 @@ import { Background } from './Theme/Background/Background';
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <ThemeProvider initialTheme='dark'>
+      <ThemeProvider initialTheme={getInitialTheme()} >
         <Background>
-          {/* <App name='hello!' /> */}
-          <App />
+          <App/>
         </Background>
       </ThemeProvider>
     </Provider>
