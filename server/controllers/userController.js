@@ -43,3 +43,5 @@ userController.login = (req, res, next) => {
     }
   });
 };
+
+module.exports = userController;
