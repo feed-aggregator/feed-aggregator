@@ -4,6 +4,7 @@ import './App.scss';
 
 import Landing from '../Pages/Landing/Landing';
 import Signup from '../Pages/Singup/Singup';
+import Login from '../Pages/Login/Login';
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
           <Routes>
             <Route path='/' element={<Landing />} />
             <Route path='/signup' element={<Signup />} />
+            <Route path='/login' element={<Login />} />
           </Routes>
         </BrowserRouter>
       </div>
