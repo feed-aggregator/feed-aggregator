@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
-const path = require('path');
 const cookieParser = require('cookie-parser');
+require('dotenv').config();
 
 const PORT = 3000;
 
@@ -35,5 +35,6 @@ app.use(function (err, req, res, next) {
 });
 
 app.listen(PORT, () => {
+  console.log(process.env.URI);
   console.log(`Listening on port ${PORT}`);
 });
