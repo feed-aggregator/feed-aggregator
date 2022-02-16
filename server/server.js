@@ -2,16 +2,23 @@ const express = require('express');
 const app = express();
 const cookieParser = require('cookie-parser');
 require('dotenv').config();
+const cors = require('cors');
+
+const corsOptions = {
+  origin: '*',
+  optionsSuccessStatus: 200,
+};
 
 const PORT = 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(cors(corsOptions));
 
 const usersRouter = require('./routes/users.js');
 
-app.use('/users', usersRouter);
+app.use('/api/users', usersRouter);
 
 app.get('/', (req, res) => {
   return res.sendStatus(200);
@@ -35,6 +42,5 @@ app.use(function (err, req, res, next) {
 });
 
 app.listen(PORT, () => {
-  console.log(process.env.URI);
   console.log(`Listening on port ${PORT}`);
 });
