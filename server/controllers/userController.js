@@ -14,9 +14,8 @@ userController.signup = (req, res, next) => {
       // console.log('hash', hash);
       Object.assign(req.body, { password: hash });
     }
-    const date = Date.now();
 
-    const input = `INSERT INTO users (user_email, user_password, user_created_at) VALUES ('${email}', '${req.body.password}', '${date}')`;
+    const input = `INSERT INTO users (user_email, user_password) VALUES ('${email}', '${req.body.password}')`;
     // console.log('req.body.password', req.body.password);
     db.query(input, (err, result) => {
       if (err) {
@@ -29,7 +28,7 @@ userController.signup = (req, res, next) => {
         });
       } else {
         // console.log('signed up');
-        res.locals.result = 'User successfully signed up.';
+        res.locals.result = true;
         return next();
       }
     });
@@ -59,7 +58,7 @@ userController.login = (req, res, next) => {
         // if (err) return next(console.log('bcrypt err', err));
         if (result) {
           console.log('password matches hashed pass');
-          res.locals.result = 'User successfully logged in.';
+          res.locals.result = true;
           return next();
         } else {
           console.log('password does not match');
@@ -67,6 +66,12 @@ userController.login = (req, res, next) => {
       });
     }
   });
+};
+
+userController.logout = (req, res, next) => {
+  res.clearCookie('cookie');
+  res.locals.result = true;
+  return next();
 };
 
 module.exports = userController;
