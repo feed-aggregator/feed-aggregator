@@ -1,6 +1,7 @@
 @use '../Theme/variables' as v;
 
 .App-container {
-  height: 100vh;
   position: relative;
+  min-height: 100vh;
+  max-width: 100vw;
 }
