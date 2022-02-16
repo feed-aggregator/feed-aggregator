@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { AiFillHome } from 'react-icons/ai';
 import { IconContext } from 'react-icons';
 export default function LightHomeIcon({
@@ -10,9 +11,9 @@ export default function LightHomeIcon({
 }) {
   return (
     <IconContext.Provider value={{ color, size }}>
-      <div>
+      <Link to='/'>
         <AiFillHome />
-      </div>
+      </Link>
     </IconContext.Provider>
   );
 }
