@@ -10,7 +10,10 @@ export default function LoginForm() {
   let userPassword = '';
 
   /* LOGIN ACCOUNT */
+
   const loginAccount = (e: any) => {
+    console.log('login clicked');
+
     /* CHECK IF ALL FIELDS NOT NULL */
     e.preventDefault();
     console.log('CLICKED');
@@ -24,6 +27,7 @@ export default function LoginForm() {
 
       /* MAKE CALL TO BACKEND */
       if (userEmail.length && userPassword.length) {
+
         fetch('http://localhost3000/api/users/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
