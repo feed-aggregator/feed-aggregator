@@ -1,8 +1,10 @@
 import React, { useRef } from 'react';
 import './SignupForm.scss';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function SignupForm() {
+  const navigate = useNavigate();
+
   const emailInput = useRef<HTMLInputElement>(null);
   const passwordInput = useRef<HTMLInputElement>(null);
   const confirmPasswordInput = useRef<HTMLInputElement>(null);
@@ -16,6 +18,7 @@ export default function SignupForm() {
     /* CHECK IF ALL FIELDS NOT NULL AND PASSWORDS MATCH */
     e.preventDefault();
     console.log('CLICKED');
+
     if (
       emailInput.current &&
       passwordInput.current &&
@@ -47,20 +50,34 @@ export default function SignupForm() {
               email: userEmail,
               password: userPassword,
             }),
-          }).then((res) => res.json());
-          // .then((data) => {
-          //   console.log(data);
-          //   if (data.err) {
-          //     console.log(data.err);
-          //   }
-          //   console.log(data.result);
-          // });
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              // navigate('/dashboard');
+              console.log(data);
+              if (data.err) {
+                console.log(data.err);
+              }
+              console.log(data.result);
+              if (data.result) {
+                navigate('/dashboard');
+              }
+            });
         } else {
           alert(`Passwords don't match`);
         }
       }
     }
   };
+
+  // TEST NAV
+  // const testNav = (e: any) => {
+  //   e.preventDefault();
+  //   console.log('clicked test nav');
+  //   // setToDashboard(true);
+  //   navigate('/dashboard');
+  //   // return;
+  // };
 
   /* RETURN RENDER */
   return (
