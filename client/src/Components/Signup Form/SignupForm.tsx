@@ -12,16 +12,18 @@ export default function SignupForm() {
   let userConfirmPassword = '';
 
   /* CREATE ACCOUNT */
-  const createAccount = () => {
+  const createAccount = (e: any) => {
     /* CHECK IF ALL FIELDS NOT NULL AND PASSWORDS MATCH */
+    e.preventDefault();
+    console.log('CLICKED');
     if (
       emailInput.current &&
       passwordInput.current &&
       confirmPasswordInput.current
     ) {
-      // console.log(emailInput.current.value);
-      // console.log(passwordInput.current.value);
-      // console.log(confirmPasswordInput.current.value);
+      console.log(emailInput.current.value);
+      console.log(passwordInput.current.value);
+      console.log(confirmPasswordInput.current.value);
 
       userEmail = emailInput.current.value;
       userPassword = passwordInput.current.value;
@@ -37,18 +39,22 @@ export default function SignupForm() {
         if (
           passwordInput.current.value === confirmPasswordInput.current.value
         ) {
-          fetch('http://localhost3000/signup', {
+          console.log('FETCHING');
+          fetch('http://localhost:3000/api/users/signup', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email: userEmail, password: userPassword }),
-          })
-            .then((res) => res.json())
-            .then((data) => {
-              if (data.err) {
-                console.log(data.err);
-              }
-              console.log(data.result);
-            });
+            body: JSON.stringify({
+              email: userEmail,
+              password: userPassword,
+            }),
+          }).then((res) => res.json());
+          // .then((data) => {
+          //   console.log(data);
+          //   if (data.err) {
+          //     console.log(data.err);
+          //   }
+          //   console.log(data.result);
+          // });
         } else {
           alert(`Passwords don't match`);
         }

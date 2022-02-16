@@ -8,7 +8,8 @@ const authController = require('../controllers/authController');
 router.use(cookieParser());
 
 router.post('/signup', userController.signup, (req, res) => {
-  return res.status(200).send(res.locals.result);
+  console.log('after signup controller');
+  return res.status(200).json({ result: res.locals.result });
 });
 
 router.post(

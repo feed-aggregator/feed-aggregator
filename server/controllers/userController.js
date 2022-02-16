@@ -5,6 +5,9 @@ const userController = {};
 
 userController.signup = (req, res, next) => {
   const { email, password } = req.body;
+  console.log('email:', email);
+  console.log('in signup controller');
+  console.log('req.body:', req.body);
 
   bcrypt.hash(password, 10, (err, hash) => {
     if (err) return next(err);
@@ -13,7 +16,7 @@ userController.signup = (req, res, next) => {
     }
   });
 
-  const input = `INSERT INTO users (user_email, user_password) VALUES (${email}, ${req.body.password})`;
+  const input = `INSERT INTO users (user_email, user_password) VALUES ('${email}', '${req.body.password}')`;
 
   db.query(input, (err, result) => {
     if (err) {
@@ -33,7 +36,7 @@ userController.signup = (req, res, next) => {
 
 userController.login = (req, res, next) => {
   const { email, password } = req.body;
-  const input = `SELECT * FROM users WHERE user_email=${email} AND user_password=${password}`;
+  const input = `SELECT * FROM users WHERE user_email='${email}' AND user_password='${password}'`;
 
   db.query(input, (err, user) => {
     if (err) {
