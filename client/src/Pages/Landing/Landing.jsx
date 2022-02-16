@@ -7,7 +7,7 @@ import LoginButton from '../../Components/Login Button/LoginButton';
 export default function Landing() {
   return (
     <div className='Landing-container'>
-      <Link to='/dashboard'>DASHBOARD</Link>
+      {/* <Link to='/dashboard'>DASHBOARD</Link> */}
       <div className='Landing-text'>
         <h2 className='Landing-welcome'>{'Welcome To ()=>'}</h2>
         <h2 className='Landing-hakrFood'>{'{ hakrFood }'} </h2>
@@ -18,7 +18,15 @@ export default function Landing() {
         <LoginButton />
       </div>
       <div className='gif'>
-        <img className='gif' src='https://i.gifer.com/3rCC.gif'></img>
+        {/* <img className='gif' src='https://i.gifer.com/3rCC.gif'></img> */}
+        <img
+          className='gif'
+          src='https://c.tenor.com/-SV9TjUGabMAAAAC/hacker-python.gif'
+        ></img>
+        {/* <img
+          className='gif'
+          src='https://c.tenor.com/9ItR8nSuxE0AAAAC/thumbs-up-computer.gif'
+        ></img> */}
       </div>
     </div>
   );
