@@ -3,12 +3,15 @@
 .Post-container {
   width: 96vw;
   height: 10vh;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  word-wrap: break-word;
 
   @include v.theme() {
     background-color: v.theme-get('primary');
     color: v.theme-get('tertiary');
     box-shadow: v.theme-get('shadow') 0px 1vw 4vw 0px;
-    // box-shadow: v.theme-get('shadow') 0px 7px 29px 0px;
   }
 
   // if we are not on mobile⬇

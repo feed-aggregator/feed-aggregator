@@ -20,10 +20,18 @@ export default function Dashboard() {
     <div className='Dashboard-container'>
       <NavBar />
       <div className='Posts-container'>
-        {posts.length &&
+        {posts.length ? (
           posts.map((post) => {
             return <Post key={post.id} content={post} />;
-          })}
+          })
+        ) : (
+          <div className='lds-ring'>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        )}
       </div>
     </div>
   );
