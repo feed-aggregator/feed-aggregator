@@ -20,15 +20,22 @@ export default function FilterModal() {
   };
   return (
     <div className='FilterModal-container'>
-      <button onClick={openModal}>Open Modal</button>
+      <button className='Filter-button' onClick={openModal}>
+        FILTER
+      </button>
       <Modal
         isOpen={isOpen}
         onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel='FILTER'
+        ariaHideApp={false}
       >
-        <h1>in modal</h1>
+        <h2>This is where we would put our feed filters</h2>
+        <h3>If we had any😂</h3>
+        <button onClick={closeModal} className='Filter-button'>
+          Close
+        </button>
       </Modal>
     </div>
   );

@@ -12,7 +12,6 @@ export default function Post({ content }: { content: HNPost }) {
     (url: string): (() => void) =>
     () =>
       openInNewTab(url);
-  console.log(content);
   return (
     <a
       className='Post-container'
