@@ -10,8 +10,11 @@ export default function LoginForm() {
   let userPassword = '';
 
   /* LOGIN ACCOUNT */
-  const loginAccount = () => {
+  const loginAccount = (e: any) => {
     /* CHECK IF ALL FIELDS NOT NULL */
+    e.preventDefault();
+    console.log('CLICKED');
+
     if (emailInput.current && passwordInput.current) {
       // console.log(emailInput.current.value);
       // console.log(passwordInput.current.value);
@@ -21,7 +24,7 @@ export default function LoginForm() {
 
       /* MAKE CALL TO BACKEND */
       if (userEmail.length && userPassword.length) {
-        fetch('http://localhost3000/login', {
+        fetch('http://localhost3000/api/users/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email: userEmail, password: userPassword }),

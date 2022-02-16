@@ -90,6 +90,9 @@
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   letter-spacing: 0;
+  margin-top: 2vh;
+  margin-right: 1vh;
+  margin-left: 1vh;
 }
 
 .btn-2:hover,
@@ -114,7 +117,8 @@
 .btn-2:hover:before {
   backface-visibility: hidden;
   // border-color: rgb(226, 91, 91);
-  border-color: #03e9f4;
+  // border-color: #03e9f4;
+  border-color: rgb(0, 165, 0);
   transition: width 350ms ease-in-out;
   width: 70%;
 }
