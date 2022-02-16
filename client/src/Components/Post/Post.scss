@@ -7,11 +7,13 @@
   align-items: center;
   flex-wrap: wrap;
   word-wrap: break-word;
+  overflow: hidden;
   padding: 2%;
   text-decoration: none;
-  transition: all 0.2s ease-in-out;
   cursor: pointer;
+  gap: 5%;
 
+  transition: all 0.2s ease-in-out;
   &:hover {
     transform: scale(1.02);
   }

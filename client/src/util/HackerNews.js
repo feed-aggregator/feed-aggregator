@@ -31,7 +31,9 @@ const getStories = async (IDs) => {
       )
     );
 
-    return stories.map((stories) => stories.data);
+    return stories
+      .map((stories) => stories.data)
+      .sort((a, b) => b.score - a.score);
   } catch (error) {
     console.error(`There was an issue fetching from HackerNews - ${error}`);
   }
