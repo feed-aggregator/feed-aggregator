@@ -24,6 +24,20 @@
         color: v.theme-get('tertiary');
       }
     }
+    .home {
+      position: fixed;
+      left: 1vw;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      right: 15vw;
+    }
+
+    .logout {
+      position: fixed;
+      right: 1vw;
+    }
 
     @include v.theme() {
       background: v.theme-get('secondary');
