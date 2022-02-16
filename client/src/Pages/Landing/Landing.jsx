@@ -7,7 +7,7 @@ import LoginButton from '../../Components/Login Button/LoginButton';
 export default function Landing() {
   return (
     <div className='Landing-container'>
-      {/* <Link to='/dashboard'>DASHBOARD</Link> */}
+      <Link to='/dashboard'>DASHBOARD</Link>
       <div className='Landing-text'>
         <h2 className='Landing-welcome'>{'Welcome To ()=>'}</h2>
         <h2 className='Landing-hakrFood'>{'{ hakrFood }'} </h2>
