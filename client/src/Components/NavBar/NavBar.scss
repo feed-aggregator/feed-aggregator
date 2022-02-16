@@ -4,7 +4,8 @@
   position: fixed;
   top: 0;
   width: 100%;
-  height: 5%;
+  height: 5vh;
+  z-index: 20;
 
   ul {
     list-style-type: none;

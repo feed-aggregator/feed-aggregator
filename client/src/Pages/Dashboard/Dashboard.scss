@@ -1,17 +1,11 @@
 @use '../../Theme/variables' as v;
 
-// .bg {
-//   @include v.theme() {
-//     background-color: v.theme-get('bg-color');
-//   }
-// }
-
 .Dashboard-container {
   position: relative;
-  top: 5%;
+  // top: 5;
 
   .Posts-container {
-    margin-top: 1vh;
+    margin-top: 5vh;
   }
 
   .lds-ring {
