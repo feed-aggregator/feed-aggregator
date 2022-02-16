@@ -22,8 +22,8 @@ router.post(
   }
 );
 
-router.put('/update-filters', (req, res) => {
-  return res.status(200);
+router.put('/update-filters', userController.updateFilters, (req, res) => {
+  return res.status(200).json({ result: res.locals.result });
 });
 
 // router.patch('/update-password', (req, res) => {
