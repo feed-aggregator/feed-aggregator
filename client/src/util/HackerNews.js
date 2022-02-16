@@ -1,5 +1,6 @@
 import axios, { AxiosResponse } from 'axios';
 import * as t from './types';
+import regeneratorRuntime from 'regenerator-runtime';
 
 export const getBestStories = async () => {
   try {

@@ -4,16 +4,15 @@ import './Dashboard.scss';
 import NavBar from '../../Components/NavBar/NavBar';
 import Post from '../../Components/Post/Post';
 import * as worker from '../../util/apiWorker';
+import regeneratorRuntime from 'regenerator-runtime';
 
 export default function Dashboard() {
   const [posts, setPosts] = useState<number[]>([]);
   useEffect(() => {
-    worker
-      .getPosts()
-      .then((stories) => {
-        if (Array.isArray(stories)) setPosts(stories);
-      })
-      .catch((err) => console.error(err));
+    (async () => {
+      const stories = await worker.getPosts();
+      if (Array.isArray(stories)) setPosts(stories);
+    })();
   }, []);
 
   const renderPosts = () => {};
