@@ -1,15 +1,12 @@
 import React from 'react';
 import './LoginForm.scss';
 import { Link } from 'react-router-dom';
-// import SignupButton from '../../Components/Signup Button/SignupButton';
-// import LoginButton from '../../Components/Login Button/LoginButton';
 
 export default function LoginForm() {
   return (
-    <div className='SignupForm-container'>
-      {/* <Link to='/dashboard'>DASHBOARD</Link> */}
-      {/* <div className='signup-box'>
-        <h2>Signup</h2>
+    <div className='LoginForm-container'>
+      <div className='login-box'>
+        <h2>Login</h2>
         <form>
           <div className='user-box'>
             <input type='text' name='' required={true} />
@@ -19,23 +16,20 @@ export default function LoginForm() {
             <input type='password' name='' required={true} />
             <label>Password</label>
           </div>
-          <div className='user-box'>
-            <input type='password' name='' required={true} />
-            <label>Confirm Password</label>
-          </div>
-          <a href='#' className='create-account'>
+          {/* <button className='forgot-password'>Forogt your password?</button> */}
+          <a href='#' className='loginform-login'>
             <span></span>
             <span></span>
             <span></span>
             <span></span>
-            Create Account
-          </a>
-          <div className='question'>Already have an account?</div>
-          <Link to='/login' className='login'>
             Login
+          </a>
+          <div className='question'>Don't have an account?</div>
+          <Link to='/signup' className='loginform-signup'>
+            Signup
           </Link>
         </form>
-      </div> */}
+      </div>
     </div>
   );
 }
