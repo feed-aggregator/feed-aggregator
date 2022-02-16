@@ -9,17 +9,15 @@ import Login from '../Pages/Login/Login';
 
 export default function App() {
   return (
-    <div className={'bg'}>
-      <div className='App-container'>
-        <BrowserRouter>
-          <Routes>
-            <Route path='/' element={<Landing />} />
-            <Route path='/signup' element={<Signup />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/dashboard' element={<Dashboard />} />
-          </Routes>
-        </BrowserRouter>
-      </div>
+    <div className='App-container'>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Landing />} />
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/dashboard' element={<Dashboard />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
