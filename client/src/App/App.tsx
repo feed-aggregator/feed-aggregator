@@ -4,7 +4,7 @@ import './App.scss';
 
 import Landing from '../Pages/Landing/Landing';
 import Dashboard from '../Pages/Dashboard/Dashboard';
-import Signup from '../Pages/Singup/Singup';
+import Signup from '../Pages/Signup/Signup';
 import Login from '../Pages/Login/Login';
 
 export default function App() {
