@@ -30,7 +30,8 @@ const getStories = async (IDs) => {
         axios.get(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
       )
     );
-    return stories;
+
+    return stories.map((stories) => stories.data);
   } catch (error) {
     console.error(`There was an issue fetching from HackerNews - ${error}`);
   }

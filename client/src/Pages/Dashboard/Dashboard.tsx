@@ -5,9 +5,10 @@ import NavBar from '../../Components/NavBar/NavBar';
 import Post from '../../Components/Post/Post';
 import * as worker from '../../util/apiWorker';
 import regeneratorRuntime from 'regenerator-runtime';
+import { HNPost } from '../../util/types';
 
 export default function Dashboard() {
-  const [posts, setPosts] = useState<number[]>([]);
+  const [posts, setPosts] = useState<HNPost[]>([]);
   useEffect(() => {
     (async () => {
       const stories = await worker.getPosts();
@@ -15,15 +16,13 @@ export default function Dashboard() {
     })();
   }, []);
 
-  const renderPosts = () => {};
-
   return (
     <div className='Dashboard-container'>
       <NavBar />
       <div className='Posts-container'>
         {posts.length &&
           posts.map((post) => {
-            return <Post key={post} content={post} />;
+            return <Post key={post.id} content={post} />;
           })}
       </div>
     </div>
