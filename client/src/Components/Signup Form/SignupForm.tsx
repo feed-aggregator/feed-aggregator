@@ -1,8 +1,7 @@
 import React from 'react';
 import './SignupForm.scss';
 import { Link } from 'react-router-dom';
-// import SignupButton from '../../Components/Signup Button/SignupButton';
-// import LoginButton from '../../Components/Login Button/LoginButton';
+
 
 export default function SignupForm() {
   return (
@@ -22,7 +21,7 @@ export default function SignupForm() {
             <input type='password' name='' required={true} />
             <label>Confirm Password</label>
           </div>
-          <a href='#' className='create-account'>
+          <a href='#' className='signupform-create-account'>
             <span></span>
             <span></span>
             <span></span>
@@ -30,7 +29,7 @@ export default function SignupForm() {
             Create Account
           </a>
           <div className='question'>Already have an account?</div>
-          <Link to='/login' className='login'>
+          <Link to='/login' className='signupform-login'>
             Login
           </Link>
         </form>
