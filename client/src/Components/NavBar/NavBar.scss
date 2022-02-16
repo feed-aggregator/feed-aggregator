@@ -20,6 +20,12 @@
       font-size: 1.5rem;
       text-transform: uppercase;
       cursor: pointer;
+
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        transform: scale(1.2);
+      }
+
       @include v.theme() {
         color: v.theme-get('tertiary');
       }

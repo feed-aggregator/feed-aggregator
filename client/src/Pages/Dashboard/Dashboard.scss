@@ -2,6 +2,9 @@
 
 .Dashboard-container {
   position: relative;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
 
   .Posts-container {
     margin-top: 5vh;

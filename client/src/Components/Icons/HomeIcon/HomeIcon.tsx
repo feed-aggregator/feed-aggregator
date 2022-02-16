@@ -1,4 +1,5 @@
 import React from 'react';
+import './HomeIcon.scss';
 import { Link } from 'react-router-dom';
 import { AiFillHome } from 'react-icons/ai';
 import { IconContext } from 'react-icons';
