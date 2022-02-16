@@ -10,6 +10,7 @@ authController.setCookie = (req, res, next) => {
       maxAge: 90000,
       httpOnly: true,
     });
+    // console.log('cookie successfully set');
     return next();
   } catch (err) {
     return next({
