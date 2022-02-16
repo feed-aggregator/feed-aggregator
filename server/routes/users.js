@@ -8,7 +8,7 @@ const authController = require('../controllers/authController');
 router.use(cookieParser());
 
 router.post('/signup', userController.signup, (req, res) => {
-  console.log('after signup controller');
+  // console.log('after signup controller');
   return res.status(200).json({ result: res.locals.result });
 });
 
@@ -17,6 +17,7 @@ router.post(
   userController.login,
   authController.setCookie,
   (req, res) => {
+    console.log('after login controller and set cookie controller');
     return res.status(200).send(res.locals.result);
   }
 );
