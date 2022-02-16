@@ -74,4 +74,27 @@ userController.logout = (req, res, next) => {
   return next();
 };
 
+userController.updateFilters = () => (req, res, next) => {
+  const { hackernews, github, reddit } = req.body;
+
+  const values = [hackernews, github, reddit];
+
+  const input = `INSERT INTO filters (filter_hackernews, filter_github, filter_reddit) VALUES ($1, $2, $3)`;
+
+  db.query(input, values, (err, result) => {
+    if (err) {
+      return next({
+        log: `There was an issue updating filters in userController.updateFilters. ${err}`,
+        status: 400,
+        message: {
+          err: 'Error occurred in userController.updateFilters.',
+        },
+      });
+    } else {
+      res.locals.result = true;
+      return next();
+    }
+  });
+};
+
 module.exports = userController;
