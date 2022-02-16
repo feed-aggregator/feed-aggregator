@@ -8,11 +8,12 @@ import * as worker from '../../util/apiWorker';
 export default function Dashboard() {
   const [posts, setPosts] = useState<number[]>([]);
   useEffect(() => {
-    (async () => {
-      const stories = await worker.getPosts();
-      // const postDetails = await worker.getPostDetails();
-      if (Array.isArray(stories)) setPosts(stories);
-    })();
+    worker
+      .getPosts()
+      .then((stories) => {
+        if (Array.isArray(stories)) setPosts(stories);
+      })
+      .catch((err) => console.error(err));
   }, []);
 
   const renderPosts = () => {};
