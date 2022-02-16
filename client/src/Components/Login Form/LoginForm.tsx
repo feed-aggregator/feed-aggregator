@@ -1,8 +1,10 @@
 import React, { useRef } from 'react';
 import './LoginForm.scss';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function LoginForm() {
+  const navigate = useNavigate();
+
   const emailInput = useRef<HTMLInputElement>(null);
   const passwordInput = useRef<HTMLInputElement>(null);
 
@@ -27,8 +29,7 @@ export default function LoginForm() {
 
       /* MAKE CALL TO BACKEND */
       if (userEmail.length && userPassword.length) {
-
-        fetch('http://localhost3000/api/users/login', {
+        fetch('http://localhost:3000/api/users/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email: userEmail, password: userPassword }),
@@ -39,6 +40,9 @@ export default function LoginForm() {
               console.log(data.err);
             }
             console.log(data.result);
+            if (data.result) {
+              navigate('/dashboard');
+            }
           });
       }
     }
