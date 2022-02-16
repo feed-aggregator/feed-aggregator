@@ -7,7 +7,7 @@ import { ThemeContext } from '../../Theme/ThemeContext';
 import FilterModal from '../FilterModal/FilterModal';
 export default function NavBar() {
   const iconSize = '1.5em';
-  const themeColor = { light: '#909aa3', dark: '#f5f6f7' };
+  const themeColor = { light: '#f6b087', dark: '#f5f6f7' };
   const { theme } = useContext(ThemeContext);
   const isDarkMode = () => theme === 'dark';
   const currThemeColor = isDarkMode() ? themeColor.dark : themeColor.light;
