@@ -1,5 +1,6 @@
 @use '../../Theme/variables' as v;
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 .Landing-container {
   // text-align: center;
@@ -18,10 +19,38 @@
   }
 }
 
+.Landing-welcome {
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+  font-size: 2.5rem;
+  margin-top: 5vh;
+
+  color: rgb(0, 165, 0);
+
+  @include v.theme() {
+    background-color: v.theme-get('bg-color');
+    // color: v.theme-get('text-color');
+  }
+}
+
+.Landing-hakrFood {
+  // font-family: 'Press Start 2P', cursive;
+  color: white;
+  font-size: 3.5rem;
+  margin-top: 3vh;
+  margin-bottom: 8vh;
+}
+
+.gif {
+  max-height: 50vh;
+  max-width: 100vh;
+  // height: 1px;
+}
+
 .Landing-text {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  height: 10rem;
+  height: 5vh;
   padding-bottom: 0rem;
   display: flex;
   // flex-wrap: wrap;
@@ -40,6 +69,8 @@
   align-items: center;
   align-content: center;
   justify-content: center;
+  margin-top: 5vh;
+  // padding: 0px;
   // font-size: calc(10px + 2vmin);
 }
 
