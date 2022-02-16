@@ -26,9 +26,9 @@ router.put('/update-filters', (req, res) => {
   return res.status(200);
 });
 
-router.patch('/update-password', (req, res) => {
-  return res.status(200);
-});
+// router.patch('/update-password', (req, res) => {
+//   return res.status(200);
+// });
 
 router.get('/logout', userController.logout, (req, res) => {
   return res.status(200).json({ result: res.locals.result });
