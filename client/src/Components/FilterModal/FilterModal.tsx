@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './FilterModal.scss';
 import Modal from 'react-modal';
 const customStyles = {
   content: {
