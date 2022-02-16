@@ -12,7 +12,7 @@ export default function Post({ content }: { content: HNPost }) {
     (url: string): (() => void) =>
     () =>
       openInNewTab(url);
-
+  console.log(content);
   return (
     <a
       className='Post-container'
@@ -20,8 +20,11 @@ export default function Post({ content }: { content: HNPost }) {
     >
       <HackerNewsIcon size='3em' />
       <h1>{content.score}</h1>
-      <h2>{content.title}</h2>
-      {/* {JSON.stringify(content)} */}
+      <div>
+        <h2>{content.title}</h2>
+        <br />
+        <h5>{`Author: ${content.by}`}</h5>
+      </div>
     </a>
   );
 }
