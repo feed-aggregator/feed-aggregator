@@ -18,8 +18,8 @@ export default function Post({ content }: { content: HNPost }) {
       className='Post-container'
       onClick={onClickUrl(`https://news.ycombinator.com/item?id=${content.id}`)}
     >
-      <HackerNewsIcon />
-      <h3>{content.score}</h3>
+      <HackerNewsIcon size='3em' />
+      <h1>{content.score}</h1>
       <h2>{content.title}</h2>
       {/* {JSON.stringify(content)} */}
     </a>

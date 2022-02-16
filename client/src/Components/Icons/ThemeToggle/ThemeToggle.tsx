@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import './ThemeToggle.scss';
 import { MdDarkMode } from 'react-icons/md';
 import { IconContext } from 'react-icons';
 import { ThemeContext } from '../../../Theme/ThemeContext';
