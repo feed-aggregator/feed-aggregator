@@ -26,7 +26,9 @@ app.get('/', (req, res) => {
 
 //catch all route handler
 app.use('*', (req, res) => {
-  res.status(404).send('Page Not Found');
+  res
+    .status(404)
+    .sendFile(path.join(__dirname, './client/src/Pages/Landing/Landing.tsx'));
 });
 
 //global error handler
