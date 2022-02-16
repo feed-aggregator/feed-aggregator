@@ -69,4 +69,10 @@ userController.login = (req, res, next) => {
   });
 };
 
+userController.logout = (req, res, next) => {
+  res.clearCookie('cookie');
+  res.locals.result = 'Successfully logged out.';
+  return next();
+};
+
 module.exports = userController;

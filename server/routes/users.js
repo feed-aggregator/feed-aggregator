@@ -18,7 +18,7 @@ router.post(
   authController.setCookie,
   (req, res) => {
     console.log('after login controller and set cookie controller');
-    return res.status(200).send(res.locals.result);
+    return res.status(200).json({ result: res.locals.result });
   }
 );
 
@@ -28,6 +28,10 @@ router.put('/update-filters', (req, res) => {
 
 router.patch('/update-password', (req, res) => {
   return res.status(200);
+});
+
+router.get('/logout', userController.logout, (req, res) => {
+  return res.status(200).json({ result: res.locals.result });
 });
 
 module.exports = router;
